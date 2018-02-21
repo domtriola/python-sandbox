@@ -34,6 +34,15 @@ class ScaleGenerator:
 
         return result
 
+    @classmethod
+    def print_all_scales(cls):
+        for key in cls.SCALE_SEQUENCES:
+            for note in cls.NOTES:
+                print('{} {}:'.format(note, key))
+                for key_note in cls.scale(note, key):
+                    print(key_note)
+                print('')
+
 
 if __name__ == "__main__":
     ROOT = sys.argv[1]
